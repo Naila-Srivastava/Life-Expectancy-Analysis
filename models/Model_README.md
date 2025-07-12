@@ -16,10 +16,8 @@ This project uses Python, data visualization, and Streamlit to provide an intera
 - Key metrics summary (mean life expectancy, outliers, etc.)
 - Downloadable insights (coming soon 🔄)
 
-
 ## 🧪 To Run Locally
 
-```bash
 * git clone [ https://github.com/Naila-Srivastava/Life-Expectancy-Analysis.git ]
 * cd `life-expectancy-analysis`
 * pip `install -r requirements.txt`

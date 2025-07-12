@@ -5,8 +5,7 @@ import pandas as pd
 import joblib
 
 # Load model and scaler
-import tensorflow as tf
-model = tf.keras.models.load_model("models/life_expectancy_model.h5")
+model = tf.keras.models.load_model("models/life_expectancy_model.keras")
 
 scaler = joblib.load("models/scaler.pkl")
 

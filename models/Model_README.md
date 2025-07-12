@@ -1,4 +1,4 @@
-# 📈 Life Expectancy Analysis 🌍
+# 📈 Life Expectancy Analysis 
 
 This project uses Python, data visualization, and Streamlit to provide an interactive and insightful web-based dashboard that lets users explore the underlying patterns in life expectancy data.
 
@@ -33,6 +33,6 @@ Life_Expectancy_Analysis/
 ├── models/
 │   ├── life_expectancy_model.keras
 │   └── scaler.pkl
+│   └── requirements.txt
+│   └── Model_README.md
 ├── app.py
-├── requirements.txt
-├── README.md

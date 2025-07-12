@@ -111,18 +111,21 @@ Massive gratitude to:
 ```plaintext
 Life-Expectancy-Analysis/
 │
-├── app.py                                              # App deployment script
-├── life_expectancy_model.keras                         # Trained DL model
-├── scaler.pkl                                          # Feature scaler object
+├── README.md                                           # You're reading this now 
+├──.gitignore
 ├── requirements.txt                                    # Dependencies list
 ├── Life_Expectancy_Data.csv                            # Raw dataset
 ├── life_expectancy_cleaned_dataset.csv                 # Cleaned dataset
 ├── new_df.csv                                          # Dataset for ML and Deep Learning analysis 
-├── EDA_Life_Expect.ipynb                               # EDA notebook
+├── EDA_Life_Expect.ipynb                               # Data Analysis & EDA notebook
 ├── ML_Life_Expect.ipynb                                # Machine Learning notebook
 ├── DL_Life_Expect.ipynb                                # Deep Learning notebook
 ├── plots/                                              # Folder for all generated plots
 ├── models/                                             # Folder for the pre-trained model and scaler files
-├── README.md                                           # You're reading this now 
-└── .gitignore
-
+│   │
+│   ├── life_expectancy_model.keras                     # Trained Deep Learning (Keras) model
+│   ├── scaler.pkl                                      # The fitted scaler used for transforming features before training
+│   ├── model.png                                       # The image of the model
+│   ├── Model requirements.txt                          # Required packages required to deploy the app
+│   └── Model_README.md                                 # README manual for the /models folder 
+└── app.py                                              # App deployment script

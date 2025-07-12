@@ -5,7 +5,9 @@ import pandas as pd
 import joblib
 
 # Load model and scaler
-model = joblib.load("models/life_expectancy_model.keras")
+import tensorflow as tf
+model = tf.keras.models.load_model("models/life_expectancy_model.keras") 
+
 scaler = joblib.load("models/scaler.pkl")
 
 st.set_page_config(page_title="Life Expectancy Predictor", layout="wide")

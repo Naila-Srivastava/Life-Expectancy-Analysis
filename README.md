@@ -71,6 +71,8 @@ Predicting life expectancy using traditional Machine Learning and Deep Learning 
 - Feature Importance (Random Forest & XGBoost)
 - Streamlit Live Inference Interface
 
+👉🏻 Check out the Streamlit app here[https://life-expect-analysis.streamlit.app/]
+
 ## 📝 Key Takeaways
 
 * Socio-economic features like **Schooling**, **GDP**, and **Income Composition** have a **strong positive impact** on life expectancy.

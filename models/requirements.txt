@@ -1,0 +1,12 @@
+# Required packages to run the Life Expectancy Analysis
+
+- jupyter
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- tensorflow
+- scikit learn
+- scipy
+- xgboost
+- csv

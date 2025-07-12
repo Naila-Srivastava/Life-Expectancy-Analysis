@@ -1,4 +1,4 @@
-## Life Expectancy Analysis 
+# Life Expectancy Analysis 
 
 Predicting life expectancy using traditional Machine Learning and Deep Learning models, wrapped in a clean Streamlit app for real-time prediction. 
 
@@ -26,8 +26,8 @@ Predicting life expectancy using traditional Machine Learning and Deep Learning 
 ## 💻 How to Run
 
 1. Clone the repo  
-2. Install dependencies: pip install -r requirements.txt  
-3. Open the notebooks: EDA_Life_Expect.ipynb, ML_Life_Expect.ipynb and DL_Life_Expect.ipynb  
+2. Install dependencies: `pip install -r requirements.txt`  
+3. Open the notebooks: `EDA_Life_Expect.ipynb`, `ML_Life_Expect.ipynb` and `DL_Life_Expect.ipynb`  
 4. Run all the cells and enjoy the visuals!
 
 ## 🤖 Models and their Features
@@ -57,12 +57,12 @@ Predicting life expectancy using traditional Machine Learning and Deep Learning 
 
 ## 📈 Sample Visualizations
 
-- **Correlation Heatmap** — To identify multicollinearity and relationships between features.
-- **Distribution Plots** — To understand the skewness, central tendencies, and spread of key variables.
-- **Outlier Detection via Boxplots** — Helped shape data preprocessing.
-- **Hypothesis Testing (t-tests)** — Checked significance of means across grouped data.
-- **Predicted vs Actual Plot** — To evaluate model accuracy.
-- **Training & Validation Loss Curves** — For visualizing model convergence and overfitting signs.
+- **Correlation Heatmap**- To identify multicollinearity and relationships between features.
+- **Distribution Plots**- To understand the skewness, central tendencies, and spread of key variables.
+- **Outlier Detection via Boxplots**- Helped shape data preprocessing.
+- **Hypothesis Testing (t-tests)**- Checked significance of means across grouped data.
+- **Predicted vs Actual Plot**- To evaluate model accuracy.
+- **Training & Validation Loss Curves**- For visualizing model convergence and overfitting signs.
 
 ## 🌍 Advanced Visuals
 

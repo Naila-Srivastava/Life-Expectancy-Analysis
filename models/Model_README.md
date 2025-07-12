@@ -4,7 +4,7 @@ This project uses Python, data visualization, and Streamlit to provide an intera
 
 ## 🚀 Demo
 
-👉 [Click here to view the live Streamlit app](https://your-streamlit-link.streamlit.app)  
+👉 [Click here to view the live Streamlit app](https://life-expect-analysis.streamlit.app/)  
 
 
 ## 🔍 Features in the App

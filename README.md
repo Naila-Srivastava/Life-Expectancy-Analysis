@@ -85,6 +85,13 @@ Predicting life expectancy using traditional Machine Learning and Deep Learning 
 * PCA didn’t improve prediction but raw engineered features worked best.
 * Model deployment adds a practical layer to any predictive analysis project.
 
+## 🔐 Model Artifacts
+
+Pre-trained model and scaler files are available in the `/models` directory.  
+These are essential for inference and app deployment.
+
+> Note: If you're running the Streamlit app locally, ensure these files are present in the correct path.
+
 ## 🧩 What’s Next?
 
 1. Implement SHAP or LIME for model explainability
@@ -104,7 +111,7 @@ Massive gratitude to:
 ```plaintext
 Life-Expectancy-Analysis/
 │
-├── app.py                                              # Streamlit application script
+├── app.py                                              # App deployment script
 ├── life_expectancy_model.keras                         # Trained DL model
 ├── scaler.pkl                                          # Feature scaler object
 ├── requirements.txt                                    # Dependencies list
@@ -115,6 +122,7 @@ Life-Expectancy-Analysis/
 ├── ML_Life_Expect.ipynb                                # Machine Learning notebook
 ├── DL_Life_Expect.ipynb                                # Deep Learning notebook
 ├── plots/                                              # Folder for all generated plots
+├── models/                                             # Folder for the pre-trained model and scaler files
 ├── README.md                                           # You're reading this now 
 └── .gitignore
 

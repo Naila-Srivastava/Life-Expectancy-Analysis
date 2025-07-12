@@ -1,12 +1,7 @@
-# Required packages to run the Life Expectancy Analysis
+# Required packages to run the Life Expectancy app
 
-- jupyter
+- joblib
 - pandas
 - numpy
-- matplotlib
-- seaborn
-- tensorflow
-- scikit learn
-- scipy
-- xgboost
-- csv
+- scikit-learn
+- streamlit

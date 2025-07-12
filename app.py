@@ -5,9 +5,20 @@ import pandas as pd
 import joblib
 
 # Load model and scaler
-model = tf.keras.models.load_model("models/life_expectancy_model.keras")
 
+import streamlit as st
+import tensorflow as tf
+import joblib
+import numpy as np
+
+# Load model and scaler
+model = tf.keras.models.load_model("models/life_expectancy_model.keras")
 scaler = joblib.load("models/scaler.pkl")
+
+def predict_life_expectancy(input_data):
+    input_scaled = scaler.transform(np.array(input_data).reshape(1, -1))
+    prediction = model.predict(input_scaled)
+    return prediction[0][0]
 
 st.set_page_config(page_title="Life Expectancy Predictor", layout="wide")
 

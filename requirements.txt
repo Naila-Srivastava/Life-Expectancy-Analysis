@@ -1,13 +1,13 @@
 # Required packages to run the Life Expectancy Analysis
 
-- joblib
-- jupyter
-- pandas
-- numpy
-- matplotlib
-- seaborn
-- tensorflow
-- scikit learn
-- scipy
-- xgboost
-- csv
+joblib
+jupyter
+pandas
+numpy
+matplotlib
+seaborn
+tensorflow
+scikit-learn
+scipy
+xgboost
+csv

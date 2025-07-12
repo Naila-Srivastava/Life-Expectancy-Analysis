@@ -101,7 +101,7 @@ Massive gratitude to:
 
 ## 📂 Project structure
 
-```plaintext```
+```plaintext
 Life-Expectancy-Analysis/
 │
 ├── app.py                                              # Streamlit application script

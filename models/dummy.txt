@@ -1,1 +1,1 @@
-This is a placeholder folder for the models.
+This is a placeholder file

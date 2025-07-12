@@ -29,9 +29,10 @@ This project uses Python, data visualization, and Streamlit to provide an intera
 Life_Expectancy_Analysis/
 │
 ├── models/
+│   │
 │   ├── life_expectancy_model.keras      # Trained Deep Learning (Keras) Model
-│   └── scaler.pkl                       # The fitted scaler used for transforming features before training
-│   └── Model requirements.txt           # Contains required packages and libraries to deploy the app
-│   └── Model_README.md                  # The file you're reading rn
+│   ├── scaler.pkl                       # The fitted scaler used for transforming features before training
+│   ├── Model requirements.txt           # Contains required packages and libraries to deploy the app
+│   ├── Model_README.md                  # The file you're reading rn
 │   └── Model.png                        # Image of the trained model
-├── app.py                               # App deployment script
+└── app.py                               # App deployment script

@@ -42,16 +42,25 @@ features = {
 # Create input dataframe
 input_df = pd.DataFrame([features])
 
-# Debug prints
-st.write("🔍 **Input Features Received**:")
-st.write(input_df)
+# Rename columns to match training format
+input_df.columns = [
+    'Year', 'Adult_Mortality', 'infant_deaths', 'Alcohol',
+    'percentage_expenditure', 'Hepatitis_B', 'Measles', 'BMI',
+    'under_five_deaths', 'Polio', 'Total_expenditure', 'Diphtheria',
+    'HIV_AIDS', 'GDP', 'Population', 'thinness_1_19_years',
+    'thinness_5_9_years', 'Income_composition_of_resources', 'Schooling'
+]
 
-# Scaled input
+# Now scale safely
 scaled_input = scaler.transform(input_df)
 
 # Debug print
 st.write("**Scaled Input Features**:")
 st.write(scaled_input)
+
+# Debug prints
+st.write("🔍 **Input Features Received**:")
+st.write(input_df)
 
 # Model prediction
 raw_prediction = model.predict(scaled_input)

@@ -71,7 +71,7 @@ Predicting life expectancy using traditional Machine Learning and Deep Learning 
 - Feature Importance (Random Forest & XGBoost)
 - Streamlit Live Inference Interface
 
-👉🏻 (Check out the Streamlit app here:) [https://life-expect-analysis.streamlit.app/] 
+👉🏻 (Check out the Streamlit app here)[https://life-expect-analysis.streamlit.app/] 
 
 ## 📝 Key Takeaways
 

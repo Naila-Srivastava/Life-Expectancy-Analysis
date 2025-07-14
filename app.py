@@ -81,5 +81,9 @@ scaled_input = scaler.transform(input_df)
 # Predict
 prediction = model.predict(scaled_input)[0]
 
+st.write("📦 Scaled Input:", scaled_input)
+st.write("🔮 Raw Prediction Output:", prediction)
+st.write("📏 Type of Prediction Output:", type(prediction))
+
 st.subheader("📉 Predicted Life Expectancy")
 st.success(f"Estimated Life Expectancy: **{float(prediction):.2f} years**")

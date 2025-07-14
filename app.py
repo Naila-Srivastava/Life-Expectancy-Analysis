@@ -1,85 +1,68 @@
 import streamlit as st
-import pandas as pd
 import numpy as np
+import pandas as pd
 import tensorflow as tf
 import joblib
 
-# Load the model and scaler
+# Load model and scaler
 model = tf.keras.models.load_model("models/life_expectancy_model.keras")
 scaler = joblib.load("models/scaler.pkl")
 
-st.set_page_config(page_title="Life Expectancy Prediction", layout="centered")
-st.title("🧬 Life Expectancy Predictor")
-
-st.markdown("Predicts life expectancy based on health and socio-economic factors.")
+# Streamlit UI
+st.set_page_config(page_title="Life Expectancy Predictor", layout="centered")
+st.title("🌍 Life Expectancy Predictor")
+st.write("Predict a country's average life expectancy based on various health and economic indicators.")
 
 # Sidebar inputs
 st.sidebar.header("Input Features")
 
-# Example feature list – make sure this order matches your training data
-features = {
-    "Adult Mortality": st.sidebar.slider("Adult Mortality", 0, 500, 150),
-    "infant deaths": st.sidebar.slider("Infant Deaths", 0, 200, 10),
-    "Alcohol": st.sidebar.slider("Alcohol Consumption", 0.0, 20.0, 5.0),
-    "percentage expenditure": st.sidebar.slider("Percentage Expenditure", 0.0, 10000.0, 500.0),
-    "Hepatitis B": st.sidebar.slider("Hepatitis B Vaccination (%)", 0, 100, 80),
-    "Measles": st.sidebar.slider("Measles Cases", 0, 5000, 100),
-    "BMI": st.sidebar.slider("BMI", 10.0, 50.0, 20.0),
-    "under-five deaths": st.sidebar.slider("Under 5 Deaths", 0, 500, 50),
-    "Polio": st.sidebar.slider("Polio (%)", 0, 100, 90),
-    "Total expenditure": st.sidebar.slider("Total Health Expenditure (%)", 0.0, 20.0, 5.0),
-    "Diphtheria": st.sidebar.slider("Diphtheria (%)", 0, 100, 85),
-    "HIV/AIDS": st.sidebar.slider("HIV/AIDS Rate", 0.0, 5.0, 0.1),
-    "GDP": st.sidebar.slider("GDP per capita", 0.0, 20000.0, 5000.0),
-    "Population": st.sidebar.slider("Population (in millions)", 0.0, 1500000000.0, 100000000.0),
-    "thinness 1-19 years": st.sidebar.slider("Thinness 1-19 years (%)", 0.0, 30.0, 5.0),
-    "thinness 5-9 years": st.sidebar.slider("Thinness 5-9 years (%)", 0.0, 30.0, 5.0),
-    "Income composition of resources": st.sidebar.slider("Income Composition", 0.0, 1.0, 0.5),
-    "Schooling": st.sidebar.slider("Schooling (years)", 0.0, 20.0, 12.0),
-    "Life expectancy": st.sidebar.slider("Previous Life Expectancy", 40.0, 90.0, 70.0)
-}
+year = st.sidebar.slider("Year", 2000, 2015, 2010)
+adult_mortality = st.sidebar.slider("Adult Mortality", 0, 500, 150)
+infant_deaths = st.sidebar.slider("Infant Deaths", 0, 100, 5)
+alcohol = st.sidebar.slider("Alcohol Consumption", 0.0, 20.0, 5.0)
+percentage_expenditure = st.sidebar.slider("Percentage Expenditure", 0.0, 10000.0, 500.0)
+hepatitis_b = st.sidebar.slider("Hepatitis B Immunization (%)", 0, 100, 80)
+measles = st.sidebar.slider("Measles Cases", 0, 10000, 50)
+bmi = st.sidebar.slider("Average BMI", 10.0, 50.0, 25.0)
+under_five_deaths = st.sidebar.slider("Under-Five Deaths", 0, 100, 10)
+polio = st.sidebar.slider("Polio Immunization (%)", 0, 100, 90)
+total_expenditure = st.sidebar.slider("Total Expenditure (%)", 0.0, 20.0, 5.0)
+diphtheria = st.sidebar.slider("Diphtheria Immunization (%)", 0, 100, 85)
+hiv_aids = st.sidebar.slider("HIV/AIDS Prevalence", 0.0, 50.0, 1.0)
+gdp = st.sidebar.slider("GDP (log scale)", 0.0, 200000.0, 5000.0)
+population = st.sidebar.slider("Population", 0.0, 1e9, 1e7)
+thinness_1_19 = st.sidebar.slider("Thinness 10-19 yrs", 0.0, 25.0, 5.0)
+thinness_5_9 = st.sidebar.slider("Thinness 5-9 yrs", 0.0, 25.0, 5.0)
+income_comp = st.sidebar.slider("Income Composition of Resources", 0.0, 1.0, 0.7)
+schooling = st.sidebar.slider("Schooling Years", 0.0, 20.0, 12.0)
 
-# Create input dataframe
-input_df = pd.DataFrame([features])
+# Combine inputs into DataFrame
+input_df = pd.DataFrame([[
+    year, adult_mortality, infant_deaths, alcohol, percentage_expenditure,
+    hepatitis_b, measles, bmi, under_five_deaths, polio, total_expenditure,
+    diphtheria, hiv_aids, gdp, population, thinness_1_19, thinness_5_9,
+    income_comp, schooling
+]])
 
-# Rename columns to match training format
+# Set correct column names matching the scaler's training
 input_df.columns = [
     'Year', 'Adult_Mortality', 'infant_deaths', 'Alcohol',
     'percentage_expenditure', 'Hepatitis_B', 'Measles', 'BMI',
-    'under_five_deaths', 'Polio', 'Total_expenditure', 'Diphtheria',
-    'HIV_AIDS', 'GDP', 'Population', 'thinness_1_19_years',
-    'thinness_5_9_years', 'Income_composition_of_resources', 'Schooling'
+    'under-five_deaths', 'Polio', 'Total_expenditure', 'Diphtheria',
+    'HIV/AIDS', 'GDP', 'Population', 'thinness__1-19_years',
+    'thinness_5-9_years', 'Income_composition_of_resources', 'Schooling'
 ]
 
-# Now scale safely
+# Scale input
 scaled_input = scaler.transform(input_df)
 
-# Debug print
-st.write("**Scaled Input Features**:")
-st.write(scaled_input)
+# Predict
+prediction = model.predict(scaled_input)[0][0]
 
-# Debug prints
-st.write("🔍 **Input Features Received**:")
-st.write(input_df)
+# Show result
+st.subheader("📉 Predicted Life Expectancy")
+st.success(f"Estimated Life Expectancy: **{prediction:.2f} years**")
 
-# Model prediction
-raw_prediction = model.predict(scaled_input)
-
-# Debug prediction shape/type
-st.write("**Raw Model Prediction Output:**")
-st.write(raw_prediction)
-st.write(f"Type: {type(raw_prediction)}, Shape: {np.shape(raw_prediction)}")
-
-# Flatten
-try:
-    prediction = float(raw_prediction[0]) if isinstance(raw_prediction[0], (list, np.ndarray)) else float(raw_prediction)
-except Exception as e:
-    st.error(f"Prediction parsing failed: {e}")
-    prediction = "N/A"
-
-# Final output
-if isinstance(prediction, float):
-    st.subheader("📉 Predicted Life Expectancy")
-    st.success(f"Estimated Life Expectancy: **{prediction:.2f} years**")
-else:
-    st.error("⚠️ Prediction could not be computed. Please check inputs or model.")
+# Debug print (optional)
+# st.write("**Scaled Input Features**:")
+# st.write(scaled_input)

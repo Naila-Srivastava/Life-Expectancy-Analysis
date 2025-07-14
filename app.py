@@ -67,7 +67,3 @@ prediction = model.predict(scaled_input)[0][0]
 # Show result
 st.subheader("📉 Predicted Life Expectancy")
 st.success(f"Estimated Life Expectancy: **{prediction:.2f} years**")
-
-# Raw input table
-with st.expander("🔍 See Raw Input Table"):
-    st.dataframe(input_df)

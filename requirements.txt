@@ -1,5 +1,3 @@
-# Required packages to run the Life Expectancy Analysis
-
 joblib
 pandas
 numpy

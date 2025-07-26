@@ -11,7 +11,7 @@ Predicting life expectancy using traditional Machine Learning and Deep Learning 
 
 ## 🔧 Tools & Technologies
 
-- **Python** (`CSV`, `Pandas`, `NumPy`, `Matplotlib`, `Seaborn`, `SciPy`, `Scikit-Learn`, `XGBoost`, `Tensorflow` & `Scikit-Learn`)
+- **Python** (`Pandas`, `NumPy`, `Matplotlib`, `Seaborn`, `SciPy`, `Scikit-Learn`, `XGBoost`, `Tensorflow` & `Scikit-Learn`)
 - **Streamlit** – For building an interactive web app  
 - **Jupyter Notebook** – For code development and EDA  
 - **Git & GitHub** – For version control and collaboration 

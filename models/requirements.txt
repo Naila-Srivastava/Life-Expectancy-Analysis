@@ -1,7 +1,5 @@
-# Required packages to run the Life Expectancy app
-
-- joblib
-- pandas
-- numpy
-- scikit-learn
-- streamlit
+joblib
+pandas
+numpy
+scikit-learn
+streamlit
